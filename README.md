@@ -1,6 +1,13 @@
-## Passport Starter
+## Meetup Test
 
-Starting point for the youtube tutorial series @ https://www.youtube.com/watch?v=A23O4aUftXk
+To run the server : 'npm run server'
+To run the client : 'npm start'
+there is a single command with nodemon: 'npm run dev' however it doesnt work for me
 
-In this tutorial series we'll be learning how to use different passport strategies for OAuth2 login 
-authentication for some of your favorite socials including Facebook, Instagram, Google, Twitch, Github, and Amazon!
+This uses Passport.js to authenticate and it set up in way that requires little config to get going
+All you have to do is add the Meetup clientID and Secret to the config/index.js file. If you look in server/index.js there are other authentication pathways (this project was copied from a personal api tester) and to configure them, all you need to do is add the id and secret from the corresponding website to the config/index.js file and you should be good to go. 
+
+This is not functional yet. Please check the issues page to help out. 
+
+
+

@@ -30,11 +30,12 @@ const Profile = () => {
             </p>
 
             <Col className="col-4" style={{ verticalAlign: "top" }}>
+                {/* THis button calls the events endpoint to get a list of events for a particular group Currently faces a CORS issue*/}
                 <Button variant="contained"  onClick={() => { fetch("https://api.meetup.com/Openstl/events/",{
                     method: 'GET',
                     headers: {
                         "Content-Type": 'application/json',
-                        'Authorization': 'Bearer 4edc2a40744d4ff5df0649c98aba370d',
+                        'Authorization': 'Bearer '+ keys.MEETUP.accessToken,
                         'cors': "no-cors"
                     },
 
@@ -50,12 +51,14 @@ const Profile = () => {
                     Get Events
                 </Button>
                 <br/>
-                <Button variant="contained" disabled>
+                {/* This button calls the rsvp endpoint which returns number of people that rsvp'ed for a particular event and all info about them. */}
+                <Button variant="contained" disabled onCLick="(fetch(https://api.meetup.com/Openstl/events/npkrsqyzkbnc/rsvps)">
                     Get RSVPs
                 </Button>
             </Col>
 
             <Col className="col-8">
+                {/* This is a cool way to show the json response from the api. Again this is a clone of a personal API tester that I built a while ago.  */}
                 <Terminal
                     userData={obj}
                     selected={selected}
